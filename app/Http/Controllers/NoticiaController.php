@@ -92,7 +92,6 @@ class NoticiaController extends Controller
 
             $file = $request->file('imagem');
             $image_path = $file->store('',  'public');
-
             $update = $noticia->update($request->all());
             $noticia->imagem = $image_path;
 

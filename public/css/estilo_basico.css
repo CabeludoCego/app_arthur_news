@@ -213,3 +213,136 @@ button:hover {
     height: 32px;
     width: 32px;
 }
+
+
+.dropbtn {
+    background-color: #212529;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #ddd;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  .site-section{
+    width: 100%;
+  }
+  .site-section .section-content{
+    width: 80%;
+    margin: 20px auto;
+  }
+  .site-section .section-content .title{
+    width: auto;
+    text-align: center;
+    margin:auto;
+  }
+  .site-section .section-content .title h2{
+    font-size: 40px;
+    color: #23d25d;
+    text-transform: uppercase;
+  }
+  .site-section .section-content .title p{
+    font-size: 26px;
+    color: #0076ad;
+    margin-top: 20px;
+  }
+  .site-section .section-content .cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    margin: 25px auto;
+  }
+  .site-section .section-content .cards .card img{
+    width: 100%;
+    height: auto;
+  }
+  .site-section .section-content .cards .card .author-subtext{
+    color: #4a4a4a;
+    font-weight: 800;
+    font-style: italic;
+
+  }
+
+  .site-section .section-content .cards .card .article{
+    padding: 15px 20px;
+  }
+  .site-section .section-content .cards .card .article h4{
+    font-size: 24px;
+    color: #4a4a4a;
+  }
+  .site-section .section-content .cards .card .article p{
+    font-size: 16px;
+    margin: 10px 0px;
+    color: #6a6a6a;
+  }
+  .site-section .section-content .cards .card a{
+    text-decoration: none;
+    display: inline-block;
+    background-color: #25c5c5;
+    padding: 8px 15px;
+    margin-left: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .site-section .section-content .cards .card .posted-date p{
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    background-color: #25c5c5;
+    padding: 6px 15px;
+  }
+
+
+@media screen and (max-width: 800px){
+    .site-section .section-content .cards{
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .navbar-brand .text .warning{
+        text-align: center;
+        
+    }
+
+
+
+}
+@media screen and (max-width: 600px){
+.site-section .section-content .cards{
+
+    grid-template-columns: 1fr;
+
+}
+
+}
+
+

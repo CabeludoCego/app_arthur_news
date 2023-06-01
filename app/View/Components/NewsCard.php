@@ -17,9 +17,11 @@ class NewsCard extends Component
     public $categoria;
     public $descricao;
     public $imagem;
+    public $id;
 
-    public function __construct($titulo, $autor, $categoria, $descricao, $imagem)
+    public function __construct($id, $titulo, $autor, $categoria, $descricao, $imagem)
     {
+        $this->id = $id;
         $this->titulo =      $titulo;
         $this->autor =       $autor;
         $this->categoria =   $categoria;
