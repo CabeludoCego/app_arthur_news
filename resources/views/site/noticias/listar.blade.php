@@ -8,21 +8,31 @@
 <div class="conteudo-pagina">
 
     <div class="titulo-pagina-2">
-        <p> Notícias </p>
+        <h2> Cinemantástico </h2>
     </div>
 
     <div class="informacao-pagina">
+        <div class="container-fluid m-0 p-0">
+            <div class="site-section">
+                <div class="section-content site">
+
+                    <div class="cards">
+
+                        @foreach($noticias as $noticia)
+
+                        <x-news-card id="{{ $noticia->id }}" titulo="{{ $noticia->titulo }}" autor="{{ $noticia->autor }}"
+                            categoria="{{ $noticia->categoria }}" descricao="{{ $noticia->descricao }}"
+                            imagem="{{ $noticia->imagem }}"/>
+
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <div style="width:90%; margin-left: auto; margin-right: auto;">
-{{--
-        <div class="cards">
-            @foreach($noticias as $noticia)
-
-            <x-news-card titulo="{{ $noticia->titulo }}" autor="{{ $noticia->autor }}"
-                categoria="{{ $noticia->categoria }}" descricao="{{ $noticia->descricao }}"
-                imagem="{{ $noticia->imagem }}"/>
-
-            @endforeach
-        </div> --}}
 
             <table border="1" width="100%">
                 <thead>
