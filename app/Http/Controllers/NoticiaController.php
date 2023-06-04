@@ -12,15 +12,36 @@ class NoticiaController extends Controller
      */
     public function index(Request $request)
     {
+        $noticias = Noticia::where('titulo', 'like', '%'.$request->input('titulo').'%')
+        ->where('autor', 'like', '%'.$request->input('autor').'%')
+        ->where('categoria', 'like', '%'.$request->input('categoria').'%')
+        ->where('descricao', 'like', '%'.$request->input('descricao').'%')
+        ->get();
 
+        // dd($request);
 
-            $noticias = Noticia::where('titulo', 'like', '%'.$request->input('titulo').'%')
-            ->where('autor', 'like', '%'.$request->input('autor').'%')
-            ->where('categoria', 'like', '%'.$request->input('categoria').'%')
-            ->where('descricao', 'like', '%'.$request->input('descricao').'%')
-            ->get();
+        return view('site.noticias.listar', ['noticias' => $noticias, 'request' => $request]);
+    }
 
-            return view('site.noticias.listar', ['noticias' => $noticias, 'request' => $request]);
+    public function buscarCategoria(Request $request){
+
+        $categoria_menu = '';
+        if(isset($request->categoria_comedia)){
+            $categoria_menu = $request->categoria_comedia;
+        }
+        else if(isset($request->categoria_estreias)){
+            $categoria_menu = $request->categoria_estreias;
+        }
+        else if(isset($request->categoria_atores)){
+            $categoria_menu = $request->categoria_atores;
+        }
+        else if(isset($request->categoria_diretores)){
+            $categoria_menu = $request->categoria_diretores;
+        }
+
+        $noticias =  Noticia::where('categoria', 'like', '%'.$categoria_menu.'%')
+        ->get();
+        return view('site.noticias.listar', ['noticias' => $noticias, 'request' => $request]);
     }
 
     public function sobreMim()

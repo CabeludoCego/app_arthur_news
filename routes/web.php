@@ -17,12 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [NoticiaController::class, 'index'])->name('site.noticias.listar');
 Route::post('/', [NoticiaController::class, 'index'])->name('site.noticias.listar');
 
+Route::post('/categoria', [NoticiaController::class, 'buscarCategoria'])->name('site.noticias.categoria');
+
 Route::get('/sobre-mim', [NoticiaController::class, 'sobreMim'])->name('site.sobre-mim');
 
 // página principal e página de noticias
 
 Route::get('/noticias/buscar', [NoticiaController::class, 'buscar'])->name('site.noticias.buscar');
-// Route::post('/noticias/buscar', [NoticiaController::class, 'buscar'])->name('site.noticias.buscar');
 
 Route::get('/noticias/adicionar', [NoticiaController::class, 'adicionar'])->name('site.noticias.adicionar');
 Route::post('/noticias/adicionar', [NoticiaController::class, 'adicionar'])->name('site.noticias.adicionar');

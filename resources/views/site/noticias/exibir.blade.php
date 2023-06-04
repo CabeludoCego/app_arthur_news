@@ -2,32 +2,56 @@
 @extends('site.layouts.basico')
 
 
-@section('titulo', 'Sobre mim')
+@section('titulo', "$noticia->titulo")
 @section('conteudo')
 
+<div class="conteudo-pagina">
 
-    {{-- <div class="conteudo-pagina">
 
-        <hr><hr>
-        {{ $noticia->titulo }} - {{ $noticia->autor }} - {{ $noticia->categoria }}
-        <hr>
-        {{ $noticia->descricao }}
-        <hr>
-        {{ $noticia->imagem }}
-        <br>
+    @include('site.layouts._partials.titulo')
 
-    </div> --}}
+    <section class="article-section">
+        <article class="article-page">
+            <h1 class="article-title">
+                {!! $noticia->titulo !!}
+            </h1>
 
-    <div class="image-section">
-        <img src="{{ Storage::url("{$noticia->imagem}")  }}" alt="{{ $noticia->imagem }}"
-        style="wdith=200px; height:200px;">
-    </div>
+            <h6 class="article-author">Postado por: {!! $noticia->autor !!} em {{ $noticia->created_at->toDateString() }}
+                <br>
+                Tag: {{ $noticia->categoria }}
+            </h6>
 
-    <div class="article" >
-        <h4>{!! $noticia->titulo !!}</h4>
-        <p class="author-subtext">{{ $noticia->autor }}</p>
-        <p>Categoria: {{ $noticia->categoria }}</p>
-        <p>{!! $noticia->descricao !!}</p>
-    </div>
+            <div class="article-options">
+                <div>
+                    <a href="{{ route('site.noticias.editar', $noticia->id) }}">
+                        <img
+                        src="{{asset('assets/images/edit.svg')}}"
+                        class="icons-theme">
+                    </a>
+                </div>
+                <div>
+                    <a href="{{ route('site.noticias.excluir', $noticia->id) }}">
+                        <img
+                        src="{{asset('assets/images/delete.svg')}}"
+                        class="icons-theme">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="image-section">
+                <img class="article-image" src="{{ Storage::url("{$noticia->imagem}")  }}" alt="{{ $noticia->imagem }}">
+            </div>
+
+
+            <div class="article-text">
+                <p class="article-paragraph">
+                    {!! $noticia->descricao !!}
+                </p>
+            </div>
+
+        </article>
+    </section>
+</div>
 
 @endsection

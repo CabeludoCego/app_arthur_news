@@ -6,8 +6,13 @@
 
 	<div class="conteudo-pagina">
 
+
         <div class="titulo-pagina-2">
-            <p>Nova Notícia</p>
+            <div class="titulo-background">
+                <div class="titulo-texto">
+                    <h2> Nova Notícia </h2>
+                </div>
+            </div>
         </div>
 
         <div class="informacao-pagina">
@@ -33,7 +38,7 @@
                     {{ $errors->has('imagem') ? $errors->first('imagem') : '' }}
 
 
-                    <button type="submit" class="borda-preta">Cadastrar</button>
+                    <button type="submit" class="borda-preta sg">Cadastrar</button>
 
                 </form>
             </div>

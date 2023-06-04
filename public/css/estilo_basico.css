@@ -4,6 +4,16 @@ html, body {
 	font-family: 'Roboto', sans-serif;
 }
 
+:root {
+    --dk-blue: #1E83AE;
+    --blue: #3D5B94;
+    --light-blue: #3DACDD;
+    --green: #6dcd9a;
+    --social-size: 1.2em;
+    --social-width: 20%;
+}
+
+
 p, span {
 	color: #ffffff;
 }
@@ -40,15 +50,17 @@ input, select, textarea, button {
 	border: solid 1px #333;
 }
 
-button {
+button.sg{
 	background-color: #7ab829;
 	cursor: pointer;
 	color: #fff;
+    transition-duration: 0.4s;
 }
 
-button:hover {
-	background-color: #6ea22c;
+button:hover.sg {
+	background-color: #95df35;
 }
+
 
 ::placeholder {
 	color: #333333;
@@ -159,11 +171,12 @@ button:hover {
 }
 
 .titulo-pagina-2 {
-	padding: 70px 0px 10px 0px;
+	padding: 0px 0px 10px 0px;
     margin-bottom: 10px;
-	background-color: #2a9ee2;
 	text-align: center;
 }
+
+
 
 .informacao-pagina {
 	text-align: center;
@@ -213,15 +226,39 @@ button:hover {
     height: 32px;
     width: 32px;
 }
-
+/*
 
 .dropbtn {
-    background-color: #212529;
+    background-color: #343a40;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  } */
+
+  li:hover.nav-item.active {
+    background-color:#444649;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
   }
+
+
+  button.dropbtn {
+    background-color: #30383f;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+  button:hover.dropbtn {
+    background-color:#444649;
+}
 
   .dropdown {
     position: relative;
@@ -231,14 +268,22 @@ button:hover {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: #30383f;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
 
-  .dropdown-content a {
-    color: black;
+
+  button.dropbtn.dropdown-link {
+    color: orange;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  button:hover.dropbtn.dropdown-link {
+    background-color: rgb(80, 80, 80);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -248,10 +293,21 @@ button:hover {
 
   .dropdown:hover .dropdown-content {display: block;}
 
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn {background-color: #343a40;}
+
+  .card {
+    max-width: 20vw;
+    /* max-height: 30vh; */
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #d1d1d1;
+
+  }
+
 
   .site-section{
     width: 100%;
+    padding-bottom: 80px;
   }
   .site-section .section-content{
     width: 80%;
@@ -277,16 +333,16 @@ button:hover {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
     margin: 25px auto;
+    justify-items: center;
   }
   .site-section .section-content .cards .card img{
-    width: 100%;
-    height: auto;
+    width: 28vh;
+    border-radius: 20px;
   }
   .site-section .section-content .cards .card .author-subtext{
     color: #4a4a4a;
     font-weight: 800;
     font-style: italic;
-
   }
 
   .site-section .section-content .cards .card .article{
@@ -302,13 +358,19 @@ button:hover {
     color: #6a6a6a;
   }
   .site-section .section-content .cards .card a{
-    text-decoration: none;
     display: inline-block;
-    background-color: #25c5c5;
+    background-color: rgb(255, 229, 35);
     padding: 8px 15px;
-    margin-left: 20px;
-    color: #fff;
+    color: black;
     margin-bottom: 20px;
+
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+  .site-section .section-content .cards .card a:hover{
+
+    background-color: rgb(255, 237, 101);
+    text-decoration: underline;
   }
   .site-section .section-content .cards .card .posted-date p{
     font-weight: 600;
@@ -320,27 +382,154 @@ button:hover {
     padding: 6px 15px;
   }
 
+  ul.navbar-nav.mr-auto {
+    align-items: center;
+  }
+
+  div.article-options {
+    display: flex;
+  }
+  div.image-section{
+    display:flex;
+  }
+
+
+  article.article-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    width: 80%;
+    border: 1px solid gray;
+  }
+
+section.article-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+    padding-bottom: 60px;
+}
+
+ h1.article-title {
+	font-family: Impact;
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: 2.1rem;
+    color: rgb(51, 55, 80);
+	text-shadow: 0.5px 0px 0 #000;
+	word-spacing: 2px;
+	margin: 24px 0px 8px 0px;
+    text-align: center;
+}
+h6.article-author {
+    text-align: center;
+    font-family: LeagueGothic, sans-serif;
+    text-shadow: 0 0 black;
+    margin: 8px 8px 8px 8px;
+    font-size: 1em;
+}
+
+    div.image-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    img.article-image{
+        width: 20vw;
+        height: auto;
+        border-radius: 10px;
+        justify-content: center;
+        border: 1px solid gray;
+    }
+
+    p.article-paragraph {
+        color: inherit;
+        font-weight: 500;
+        text-align: justify;
+        margin-top: 24px;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+ p.article-text {
+    color: black;
+ }
+
+
+ div.titulo-background {
+    background: url('../assets/images/movie3.png') repeat;
+    border: 2px solid black;
+}
+
+  div.titulo-texto {
+    margin: 0px;
+    background-color: #ffffff;
+    border: 12px solid black;
+    opacity: 0.9;
+  }
+
+  div.titulo-texto h2 {
+    font-family: Impact;
+    font-weight: bold;
+	text-transform: uppercase;
+    font-size:2.5em;
+    margin: 5%;
+    color: #000000;
+  }
+  div.titulo-texto p {
+    font-weight: bold;
+    margin: 5%;
+    color: #000000;
+  }
+
+
+
+ footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;   /* Height of the footer */
+    background: black;
+    color: yellow
+ }
+
+footer .copyright {
+    width: 100%;
+    float: center;
+    color: inherit;
+    display:flex;
+}
+
+p.copyright-text {
+    padding: 0% 20%;
+    text-align: center;
+    color: yellow;
+    text-decoration: underline;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+
 
 @media screen and (max-width: 800px){
     .site-section .section-content .cards{
-
         grid-template-columns: repeat(3, 1fr);
+    }
 
+    .site-section .section-content .cards .card img{
+        width: 20vh;
+        border-radius: 20px;
     }
 
     .navbar-brand .text .warning{
         text-align: center;
-        
     }
-
-
 
 }
 @media screen and (max-width: 600px){
 .site-section .section-content .cards{
-
     grid-template-columns: 1fr;
-
 }
 
 }

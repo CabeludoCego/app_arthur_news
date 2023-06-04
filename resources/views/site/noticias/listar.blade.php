@@ -7,9 +7,7 @@
 
 <div class="conteudo-pagina">
 
-    <div class="titulo-pagina-2">
-        <h2> Cinemantástico </h2>
-    </div>
+    @include('site.layouts._partials.titulo')
 
     <div class="informacao-pagina">
         <div class="container-fluid m-0 p-0">
@@ -31,7 +29,7 @@
             </div>
 
         </div>
-
+{{--
         <div style="width:90%; margin-left: auto; margin-right: auto;">
 
             <table border="1" width="100%">
@@ -80,7 +78,7 @@
             </table>
 
 
-        </div>
+        </div> --}}
     </div>
 </div>
 

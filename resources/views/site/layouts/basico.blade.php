@@ -17,5 +17,8 @@
     	@include('site.layouts._partials.topo')
 			@yield('conteudo')
 
-		</body>
+
+    	@include('site.layouts._partials.footer')
+
+    </body>
 </html>
