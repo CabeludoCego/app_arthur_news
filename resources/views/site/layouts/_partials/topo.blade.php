@@ -28,16 +28,6 @@
                     <div class="dropdown-content">
                         <form method="post" action="{{ route('site.noticias.categoria') }}">
                             @csrf
-                            <button class="dropbtn dropdown-link" type="submit">Comédia</button>
-                            <input type="hidden" value="Comédia" name="categoria_comedia">
-                        </form>
-                        <form method="post" action="{{ route('site.noticias.categoria') }}">
-                            @csrf
-                            <button class="dropbtn dropdown-link" type="submit">Estreias</button>
-                            <input type="hidden" value="Estreias" name="categoria_estreias">
-                        </form>
-                        <form method="post" action="{{ route('site.noticias.categoria') }}">
-                            @csrf
                             <button class="dropbtn dropdown-link" type="submit">Atores</button>
                             <input type="hidden" value="Atores" name="categoria_atores">
                         </form>
@@ -46,6 +36,17 @@
                             <button class="dropbtn dropdown-link" type="submit">Diretores</button>
                             <input type="hidden" value="Diretores" name="categoria_diretores">
                         </form>
+                        <form method="post" action="{{ route('site.noticias.categoria') }}">
+                            @csrf
+                            <button class="dropbtn dropdown-link" type="submit">Filmes</button>
+                            <input type="hidden" value="Filmes" name="categoria_filmes">
+                        </form>
+                        <form method="post" action="{{ route('site.noticias.categoria') }}">
+                            @csrf
+                            <button class="dropbtn dropdown-link" type="submit">Compositores</button>
+                            <input type="hidden" value="Compositores" name="categoria_compositores">
+                        </form>
+                  
                     </div>
                 </li>
 

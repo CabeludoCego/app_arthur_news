@@ -9,7 +9,7 @@
         <div class="article" >
             <h4>{!! $titulo !!}</h4>
             <p class="author-subtext">{{ $autor }}</p>
-            <p>{!! $descricao !!}</p>
+            {{-- <p>{!! $categoria !!}</p> --}}
         </div>
         <div class="site-view">
             <a href="{{ route('site.noticias.exibir', $id) }}"

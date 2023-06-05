@@ -26,11 +26,11 @@ class NoticiaController extends Controller
     public function buscarCategoria(Request $request){
 
         $categoria_menu = '';
-        if(isset($request->categoria_comedia)){
-            $categoria_menu = $request->categoria_comedia;
+        if(isset($request->categoria_filmes)){
+            $categoria_menu = $request->categoria_filmes;
         }
-        else if(isset($request->categoria_estreias)){
-            $categoria_menu = $request->categoria_estreias;
+        else if(isset($request->categoria_compositores)){
+            $categoria_menu = $request->categoria_compositores;
         }
         else if(isset($request->categoria_atores)){
             $categoria_menu = $request->categoria_atores;
