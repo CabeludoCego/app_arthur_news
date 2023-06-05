@@ -1,18 +1,18 @@
 @extends('site.layouts.basico')
 
 
-@section('titulo', 'Portal de Notícias')
+@section('titulo', 'Portal de Notícias - Buscar')
 @section('conteudo')
 
 
 <div class="conteudo-pagina">
 
     <div class="titulo-pagina-2">
-
-        <h2>Bem-vindo!</h2>
-        <hr>
-        <p>Portal de Notícias</p>
-
+        <div class="titulo-background">
+            <div class="titulo-texto">
+                <h2> Pesquisar Notícia </h2>
+            </div>
+        </div>
     </div>
 
     <div class="informacao-pagina">
@@ -23,7 +23,7 @@
                 <input name="autor" type="text" placeholder="Autor" class="borda-preta">
                 <input name="categoria" type="text" placeholder="Categoria" class="borda-preta">
                 <input name="descricao" type="text" placeholder="Descrição" class="borda-preta">
-                <button type="submit" class="borda-preta">Pesquisar</button>
+                <button type="submit" class="borda-preta sg">Pesquisar</button>
             </form>
         </div>
     </div>
